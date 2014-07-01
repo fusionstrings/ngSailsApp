@@ -1,0 +1,9 @@
+<h1>Add / Edit products</h1>
+<form name="new_products_form">
+    <div ng-repeat="(attr_name, attr_value) in model_def">
+        <label for="{{attr_name}}">{{attr_name}}</label>
+        <input type="text" ng-model="products[attr_name]" name="{{attr_name}}" />
+    </div>
+    <button ng-click="save(products)">Save products</button>
+    <button ui-sref="products.list">Cancel</button>
+</form>

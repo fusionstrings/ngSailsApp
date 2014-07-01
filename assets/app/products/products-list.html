@@ -1,0 +1,12 @@
+<h1>Products</h1>
+<ul>
+    <li ng-repeat="products in products">
+        <div>
+            <p ng-repeat="(key, val) in model_def">{{key}} : {{products[key]}}</p>
+        </div>
+        <a href="" ui-sref="products.edit({ id: products.id })">Edit</a>
+        <a href="" ng-click="remove(products)">Delete</a>
+    </li>
+</ul>
+<div ng-show="products.length === 0">Looks like you haven't added any products yet?</div>
+<a ng-hide="adding" ui-sref="products.add">Add A New Products</a>
